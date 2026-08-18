@@ -6,9 +6,9 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "moneyprinterturbo"
+name = "b-roll"
 version = "1.0.0"
-description = "Generate short videos from prompts, local assets, subtitles, and TTS."
+description = "B-roll: generate short videos from prompts, local assets, subtitles, and TTS."
 readme = "README-en.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
