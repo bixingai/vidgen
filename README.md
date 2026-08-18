@@ -260,8 +260,8 @@ cd vidgen
 docker compose -f docker-compose.release.yml up
 ```
 
-> 默认推荐使用 `docker-compose.release.yml`，它会拉取原项目仍在发布的预构建镜像：`ghcr.io/harry0703/moneyprinterturbo:latest`。
-> 如果你需要本地重新构建镜像，可以继续使用 `docker compose up`。
+> 预构建镜像发布后可用 `docker-compose.release.yml` 拉取 `ghcr.io/bixingai/b-roll:latest`。
+> 镜像尚未发布时，请用 `docker compose up` 在本地构建。
 > 首次启动前，请将 `config.example.toml` 复制为 `config.toml`，供容器挂载使用。
 
 #### ② 访问 WebUI
