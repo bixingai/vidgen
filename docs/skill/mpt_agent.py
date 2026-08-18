@@ -21,7 +21,7 @@ from pathlib import Path
 
 PRODUCT_NAME = "B-roll"
 PROJECT_ARCHIVE_URL = (
-    "https://github.com/bixingai/vidgen/archive/refs/heads/main.zip"
+    "https://github.com/bixingai/b-roll/archive/refs/heads/main.zip"
 )
 DEFAULT_ROOT = Path.home() / "B-roll"
 AGENT_LOG_DIR_NAME = "b-roll-video"
@@ -122,7 +122,7 @@ def ensure_project(root: Path) -> None:
     log(f"first-time installation: downloading the official project to {root}")
     with tempfile.TemporaryDirectory(prefix="mpt-install-") as temp_dir_value:
         temp_dir = Path(temp_dir_value)
-        archive_path = temp_dir / "vidgen.zip"
+        archive_path = temp_dir / "b-roll.zip"
         request = urllib.request.Request(
             PROJECT_ARCHIVE_URL,
             headers={"User-Agent": USER_AGENT},

@@ -10,11 +10,11 @@
 
 包含 © 2024 Harry 的 MIT 许可代码。
 
-[![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
+[![Version](https://img.shields.io/github/v/release/bixingai/b-roll?color=blue&label=version)](https://github.com/bixingai/b-roll/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/b-roll)
 [![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
-简体中文 | [English](README-en.md) | [版本发布](https://github.com/bixingai/vidgen/releases) | [问题反馈](https://github.com/bixingai/vidgen/issues)
+简体中文 | [English](README-en.md) | [版本发布](https://github.com/bixingai/b-roll/releases) | [问题反馈](https://github.com/bixingai/b-roll/issues)
 
 </div>
 
@@ -205,7 +205,7 @@
 如果你的 AI Agent 支持读取 Skill 文档并操作本地终端，可以直接发送下面这段话。Agent 会自动完成安装、配置和视频生成；只有缺少必要的 API Key 时才会向你询问，完成后会返回生成的视频文件路径。目前支持 macOS 和 Windows。
 
 ```text
-使用这个 Skill：https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/SKILL.md
+使用这个 Skill：https://raw.githubusercontent.com/bixingai/b-roll/main/docs/skill/SKILL.md
 帮我生成一个主题为“人工智能如何改变普通人的日常生活”的视频。
 ```
 
@@ -237,7 +237,7 @@ B-roll 目前以源码安装为主（见下方「手动部署」）。如果你�
 #### ① 克隆代码
 
 ```shell
-git clone https://github.com/bixingai/vidgen.git
+git clone https://github.com/bixingai/b-roll.git
 ```
 
 #### ② 配置项目（可选）
@@ -256,7 +256,7 @@ Windows 用户可以参考微软的文档：
 2. https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers
 
 ```shell
-cd vidgen
+cd b-roll
 docker compose -f docker-compose.release.yml up
 ```
 
@@ -284,8 +284,8 @@ docker compose -f docker-compose.release.yml up
 推荐使用 [uv](https://docs.astral.sh/uv/) 管理 Python 环境和依赖。项目支持 Python 3.11 或更高版本，以下示例使用 Python 3.11。
 
 ```shell
-git clone https://github.com/bixingai/vidgen.git
-cd vidgen
+git clone https://github.com/bixingai/b-roll.git
+cd b-roll
 uv python install 3.11
 uv sync --frozen
 ```
@@ -306,7 +306,7 @@ pip install -r requirements.txt
 
 #### ② 启动 WebUI 🌐
 
-注意需要到 B-roll 项目 `根目录`（克隆下来一般叫 `vidgen`）下执行以下命令
+注意需要到 B-roll 项目 `根目录`（克隆下来一般叫 `b-roll`）下执行以下命令
 
 ###### Windows
 
@@ -386,7 +386,7 @@ model_size = "large-v3-turbo"
 下载并解压后，将整个目录放到项目根目录的 `models` 下，最终路径应为 `.\models\whisper-large-v3`：
 
 ```
-vidgen
+b-roll
   ├─models
   │   └─whisper-large-v3
   │          config.json
@@ -491,7 +491,7 @@ Trying to load the model directly from the local cache, if it exists.
 
 ## 反馈建议 📢
 
-- 可以提交 [issue](https://github.com/bixingai/vidgen/issues) 或者 [pull request](https://github.com/bixingai/vidgen/pulls)。
+- 可以提交 [issue](https://github.com/bixingai/b-roll/issues) 或者 [pull request](https://github.com/bixingai/b-roll/pulls)。
 
 ## 许可证 📝
 
@@ -499,10 +499,10 @@ Trying to load the model directly from the local cache, if it exists.
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=bixingai%2Fvidgen&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=bixingai%2Fb-roll&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&legend=top-left" />
  </picture>
 </a>
