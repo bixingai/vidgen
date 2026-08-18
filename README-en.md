@@ -10,11 +10,11 @@ Give it a <b>topic</b> or <b>keyword</b>. It writes the voiceover, pulls B-roll,
 
 Includes work © 2024 Harry (MIT).
 
-[![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
+[![Version](https://img.shields.io/github/v/release/bixingai/b-roll?color=blue&label=version)](https://github.com/bixingai/b-roll/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/b-roll)
 [![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
-English | [简体中文](README.md) | [Releases](https://github.com/bixingai/vidgen/releases) | [Issues](https://github.com/bixingai/vidgen/issues)
+English | [简体中文](README.md) | [Releases](https://github.com/bixingai/b-roll/releases) | [Issues](https://github.com/bixingai/b-roll/issues)
 
 </div>
 
@@ -206,7 +206,7 @@ The examples below were generated with this pipeline.
 If your AI Agent can read Skill documents and operate a local terminal, send it the prompt below. The Agent will install and configure the project, generate the video, and return the video file path. It will ask only for required API keys that are not already configured. This workflow currently supports macOS and Windows.
 
 ```text
-Use this Skill: https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/SKILL.md
+Use this Skill: https://raw.githubusercontent.com/bixingai/b-roll/main/docs/skill/SKILL.md
 Create a video with the topic "How AI is changing everyday life."
 ```
 
@@ -242,7 +242,7 @@ Use the local setup or Docker instructions below.
 #### ① Clone the Project
 
 ```shell
-git clone https://github.com/bixingai/vidgen.git
+git clone https://github.com/bixingai/b-roll.git
 ```
 
 #### ② Configure the Project (Optional)
@@ -260,7 +260,7 @@ If you are using a Windows system, please refer to Microsoft's documentation:
 2. https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
 
 ```shell
-cd vidgen
+cd b-roll
 docker compose -f docker-compose.release.yml up
 ```
 
@@ -283,8 +283,8 @@ Open your browser and visit http://127.0.0.1:8080/docs or http://127.0.0.1:8080/
 Use [uv](https://docs.astral.sh/uv/) to manage the Python environment and dependencies. The project supports Python 3.11 or later; the example below uses Python 3.11.
 
 ```shell
-git clone https://github.com/bixingai/vidgen.git
-cd vidgen
+git clone https://github.com/bixingai/b-roll.git
+cd b-roll
 uv python install 3.11
 uv sync --frozen
 ```
@@ -305,7 +305,7 @@ Notes:
 
 #### ② Launch the WebUI 🌐
 
-Note that you need to execute the following commands in the `root directory` of the B-roll project (usually `vidgen` after cloning)
+Note that you need to execute the following commands in the `root directory` of the B-roll project (usually `b-roll` after cloning)
 
 ###### Windows
 
@@ -387,7 +387,7 @@ model_size = "large-v3-turbo"
 After extracting the model, place the entire directory in `.\models`. The final path should be `.\models\whisper-large-v3`:
 
 ```
-vidgen
+b-roll
   ├─models
   │   └─whisper-large-v3
   │          config.json
@@ -495,7 +495,7 @@ Solution: [See how to download the model manually from Hugging Face](#subtitle-g
 
 ## Feedback & Suggestions 📢
 
-- You can submit an [issue](https://github.com/bixingai/vidgen/issues) or a [pull request](https://github.com/bixingai/vidgen/pulls).
+- You can submit an [issue](https://github.com/bixingai/b-roll/issues) or a [pull request](https://github.com/bixingai/b-roll/pulls).
 
 ## License 📝
 
@@ -503,10 +503,10 @@ Click to view the [`LICENSE`](LICENSE) file. This repository includes work © 20
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=bixingai%2Fvidgen&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=bixingai%2Fb-roll&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/b-roll&type=date&legend=top-left" />
  </picture>
 </a>
