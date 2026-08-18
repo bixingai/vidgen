@@ -8,7 +8,7 @@
 
 Give it a <b>topic</b> or <b>keyword</b>. It writes the voiceover, pulls B-roll, adds captions and music, and cuts an HD short.
 
-Based on [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) (MIT).
+Includes work © 2024 Harry (MIT).
 
 [![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
@@ -33,12 +33,12 @@ English | [简体中文](README.md) | [Releases](https://github.com/bixingai/vid
 ## Special Thanks ❤️
 
 <div align="center">
-  <a href="https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png" alt="Kimi sponsors MoneyPrinterTurbo" width="100%"></a>
+  <a href="https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png" alt="Kimi sponsors B-roll" width="100%"></a>
 </div>
 
 Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo) for sponsoring this project! [Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) is Moonshot AI's most capable model and the world's first open 3T-class model. With native vision and a 1-million-token context window, K3 delivers frontier performance across knowledge work, reasoning, and long-horizon tasks. Within B-roll, K3 powers video creation by writing scripts and extracting the search keywords that determine the final footage—the better it understands the content, the more relevant the results.
 
-**Exclusive offer for MoneyPrinterTurbo users: new users who register through the dedicated link receive bonus API credit equal to 10% of their first successful top-up, up to CNY 1,000. The offer ends September 30, 2026. Visit the Kimi Open Platform ([中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) | [Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)) to try the API.**
+**New users who register through the link above receive bonus API credit equal to 10% of their first successful top-up, up to CNY 1,000. The offer ends September 30, 2026. Visit the Kimi Open Platform ([中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) | [Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)) to try the API.**
 
 <br>
 <table align="center">
@@ -141,7 +141,7 @@ Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247
 
 ## Gallery 🎬
 
-The examples below were generated with upstream MoneyPrinterTurbo and show the same production pipeline.
+The examples below were generated with this pipeline.
 
 ### Portrait 9:16
 
@@ -214,15 +214,15 @@ The Skill installs into `~/B-roll`. You can also ask an agent to run `cli.py` in
 
 ### Run in Google Colab
 
-To skip local setup, try the upstream MoneyPrinterTurbo Colab notebook. It runs the same pipeline:
+To skip local setup, try this Colab notebook. It runs the same pipeline:
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)
 
 ### Windows
 
-B-roll is currently installed from source (see Manual Deployment below). For a portable zip, use the upstream MoneyPrinterTurbo release:
+B-roll is currently installed from source (see Manual Deployment below). For a portable zip, use the original project's release:
 
-- Upstream Release: https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
+- Original project release: https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
 
 After downloading, it is recommended to **double-click** `update.bat` first to update to the **latest code**, then double-click `start.bat` to launch
 
@@ -264,7 +264,7 @@ cd vidgen
 docker compose -f docker-compose.release.yml up
 ```
 
-> The recommended default is `docker-compose.release.yml`, which pulls the image still published by upstream: `ghcr.io/harry0703/moneyprinterturbo:latest`.
+> The recommended default is `docker-compose.release.yml`, which pulls the prebuilt image still published by the original project: `ghcr.io/harry0703/moneyprinterturbo:latest`.
 > If you need to build the image locally, you can still run `docker compose up`.
 > Before the first start, copy `config.example.toml` to `config.toml` so it can be mounted into the containers.
 
@@ -499,7 +499,7 @@ Solution: [See how to download the model manually from Hugging Face](#subtitle-g
 
 ## License 📝
 
-Click to view the [`LICENSE`](LICENSE) file. B-roll is based on [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) (MIT).
+Click to view the [`LICENSE`](LICENSE) file. This repository includes work © 2024 Harry (MIT).
 
 ## Star History
 

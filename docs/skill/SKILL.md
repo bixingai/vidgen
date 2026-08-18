@@ -1,17 +1,16 @@
 ---
 name: b-roll-video
-description: Use this skill whenever the user wants to create a finished video from a topic, title, idea, prompt, or script with B-roll (or the MoneyPrinterTurbo pipeline this fork is based on). This includes short-form, voice-over, educational, marketing, social-media, and stock-footage videos. Also use it when the user mentions B-roll, VidGen, MoneyPrinterTurbo, provides this Skill URL, asks an AI agent to install or configure B-roll, needs missing API keys identified, wants a failed generation repaired, or wants a generated MP4 located and delivered. Use this skill when the expected outcome is a final video file, not setup instructions.
+description: Use this skill whenever the user wants to create a finished video from a topic, title, idea, prompt, or script with B-roll. This includes short-form, voice-over, educational, marketing, social-media, and stock-footage videos. Also use it when the user mentions B-roll, VidGen, provides this Skill URL, asks an AI agent to install or configure B-roll, needs missing API keys identified, wants a failed generation repaired, or wants a generated MP4 located and delivered. Use this skill when the expected outcome is a final video file, not setup instructions.
 compatibility: Requires an AI agent with terminal, network, filesystem, and long-running command support. Supports macOS and Windows and uses uv exclusively.
 metadata:
   author: "BixingAI"
   version: "1.0.0"
   repository: "https://github.com/bixingai/vidgen"
-  upstream: "https://github.com/harry0703/MoneyPrinterTurbo"
 ---
 
 # B-roll Video Generation
 
-B-roll is a BX tool from BixingAI, based on MoneyPrinterTurbo (MIT). The user only needs to provide a video topic or script. Complete installation, configuration reuse, generation, waiting, and final MP4 delivery automatically. Do not stop after giving instructions or commands.
+B-roll is a BX tool from BixingAI. The user only needs to provide a video topic or script. Complete installation, configuration reuse, generation, waiting, and final MP4 delivery automatically. Do not stop after giving instructions or commands.
 
 ## Required Behavior
 

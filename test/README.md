@@ -1,6 +1,6 @@
 # B-roll Test Directory
 
-This directory contains unit tests for **B-roll**, based on MoneyPrinterTurbo (MIT).
+This directory contains unit tests for **B-roll**.
 
 ## Directory Structure
 

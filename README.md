@@ -8,7 +8,7 @@
 
 给一个<b>主题</b>或<b>关键词</b>，自动写旁白、找 B-roll 画面、配字幕和背景音乐，剪成一条高清短视频。
 
-基于 [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)（MIT）。
+包含 © 2024 Harry 的 MIT 许可代码。
 
 [![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
@@ -33,12 +33,12 @@
 ## 特别感谢 ❤️
 
 <div align="center">
-  <a href="https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-zh.png" alt="Kimi 赞助 MoneyPrinterTurbo" width="100%"></a>
+  <a href="https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-zh.png" alt="Kimi 赞助 B-roll" width="100%"></a>
 </div>
 
 感谢 [Kimi](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) 赞助本项目！[Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) 是 Moonshot AI 迄今能力最强的模型，也是全球首个开源 3T 级模型，拥有原生视觉能力与 100 万 Token 上下文，在知识工作、推理和长周期任务中展现前沿性能。在 B-roll 中，K3 能直接驱动视频创作，不仅撰写视频文案，还会提炼素材搜索关键词、决定成片画面；对内容理解越准确，匹配到的素材就越贴题。
 
-**MoneyPrinterTurbo 用户专属优惠：新用户通过专属链接注册，首次成功充值可获充值金额 10% 的 API 额度，最高赠送 ¥1000。活动截至 2026 年 9 月 30 日。前往 Kimi 开放平台（[中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo)｜[Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)）体验 API。**
+**通过上方专属链接注册的新用户：首次成功充值可获充值金额 10% 的 API 额度，最高赠送 ¥1000。活动截至 2026 年 9 月 30 日。前往 Kimi 开放平台（[中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo)｜[Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)）体验 API。**
 <br>
 
 <table align="center">
@@ -140,7 +140,7 @@
 
 ## 作品展示 🎬
 
-以下示例由上游 MoneyPrinterTurbo 实际生成，展示同一条制作链路。
+以下示例由本流水线实际生成。
 
 ### 竖屏 9:16
 
@@ -213,15 +213,15 @@ Skill 会安装到 `~/B-roll`。你也可以直接在本仓库里让 Agent 调�
 
 ### 在 Google Colab 中运行
 
-免去本地环境配置，可以先用上游 MoneyPrinterTurbo 的 Colab 笔记本快速体验同一条流水线：
+免去本地环境配置，可以用下面的 Colab 笔记本快速体验同一条流水线：
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)
 
 ### Windows 一键启动包
 
-B-roll 目前以源码安装为主（见下方「手动部署」）。如果你需要官方一键包，可使用上游 MoneyPrinterTurbo 的发布包（路径不要有 **中文**、**特殊字符**、**空格**）：
+B-roll 目前以源码安装为主（见下方「手动部署」）。如果你需要便携一键包，可使用原项目的发布包（路径不要有 **中文**、**特殊字符**、**空格**）：
 
-- 上游 Releases：https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
+- 原项目 Releases：https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
 
 下载后，建议先**双击执行** `update.bat` 更新到**最新代码**，然后双击 `start.bat` 启动
 
@@ -260,7 +260,7 @@ cd vidgen
 docker compose -f docker-compose.release.yml up
 ```
 
-> 默认推荐使用 `docker-compose.release.yml`，它会拉取仍由上游发布的镜像：`ghcr.io/harry0703/moneyprinterturbo:latest`。
+> 默认推荐使用 `docker-compose.release.yml`，它会拉取原项目仍在发布的预构建镜像：`ghcr.io/harry0703/moneyprinterturbo:latest`。
 > 如果你需要本地重新构建镜像，可以继续使用 `docker compose up`。
 > 首次启动前，请将 `config.example.toml` 复制为 `config.toml`，供容器挂载使用。
 
@@ -495,7 +495,7 @@ Trying to load the model directly from the local cache, if it exists.
 
 ## 许可证 📝
 
-点击查看 [`LICENSE`](LICENSE) 文件。B-roll 基于 [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)（MIT）。
+点击查看 [`LICENSE`](LICENSE) 文件。本仓库包含 © 2024 Harry 的 MIT 许可代码。
 
 ## Star History
 

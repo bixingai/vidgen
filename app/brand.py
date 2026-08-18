@@ -1,7 +1,6 @@
-"""User-facing product identity for the BixingAI fork.
+"""User-facing product identity for B-roll.
 
-Keep MIT credit to the MoneyPrinterTurbo upstream in About text. Do not
-use this module to hide that history in licenses or source headers.
+Keep the MIT license and the original copyright notice in LICENSE.
 """
 
 from pathlib import Path
