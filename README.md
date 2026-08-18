@@ -1,20 +1,20 @@
 <div align="center">
 
-# MoneyPrinterTurbo 💸
+<img src="resource/public/logo.png" alt="B-roll" width="96">
 
-### 一站式 AI 短视频生成工具
+# B-roll
 
-只需提供视频<b>主题</b>或<b>关键词</b>，即可自动生成视频脚本、匹配素材、生成字幕和背景音乐，并合成高清短视频。
+### BixingAI 的 BX 短视频工具
 
-[![Version](https://img.shields.io/github/v/release/harry0703/MoneyPrinterTurbo?color=blue&label=version)](https://github.com/harry0703/MoneyPrinterTurbo/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)
+给一个<b>主题</b>或<b>关键词</b>，自动写旁白、找 B-roll 画面、配字幕和背景音乐，剪成一条高清短视频。
+
+基于 [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)（MIT）。
+
+[![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
 [![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Downloads](https://img.shields.io/github/downloads/harry0703/MoneyPrinterTurbo/total)](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)
 
-<a href="https://trendshift.io/repositories/8731" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8731" alt="harry0703%2FMoneyPrinterTurbo | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-<a href="https://www.star-history.com/harry0703/moneyprinterturbo"><img src="https://api.star-history.com/badge?repo=harry0703/MoneyPrinterTurbo" alt="Star History Rank" style="height: 55px;" height="55"/></a>
-
-简体中文 | [English](README-en.md) | [版本发布](https://github.com/harry0703/MoneyPrinterTurbo/releases) | [问题反馈](https://github.com/harry0703/MoneyPrinterTurbo/issues)
+简体中文 | [English](README-en.md) | [版本发布](https://github.com/bixingai/vidgen/releases) | [问题反馈](https://github.com/bixingai/vidgen/issues)
 
 </div>
 
@@ -36,7 +36,7 @@
   <a href="https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-zh.png" alt="Kimi 赞助 MoneyPrinterTurbo" width="100%"></a>
 </div>
 
-感谢 [Kimi](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) 赞助本项目！[Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) 是 Moonshot AI 迄今能力最强的模型，也是全球首个开源 3T 级模型，拥有原生视觉能力与 100 万 Token 上下文，在知识工作、推理和长周期任务中展现前沿性能。在 MoneyPrinterTurbo 中，K3 能直接驱动视频创作，不仅撰写视频文案，还会提炼素材搜索关键词、决定成片画面；对内容理解越准确，匹配到的素材就越贴题。
+感谢 [Kimi](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) 赞助本项目！[Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) 是 Moonshot AI 迄今能力最强的模型，也是全球首个开源 3T 级模型，拥有原生视觉能力与 100 万 Token 上下文，在知识工作、推理和长周期任务中展现前沿性能。在 B-roll 中，K3 能直接驱动视频创作，不仅撰写视频文案，还会提炼素材搜索关键词、决定成片画面；对内容理解越准确，匹配到的素材就越贴题。
 
 **MoneyPrinterTurbo 用户专属优惠：新用户通过专属链接注册，首次成功充值可获充值金额 10% 的 API 额度，最高赠送 ¥1000。活动截至 2026 年 9 月 30 日。前往 Kimi 开放平台（[中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo)｜[Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)）体验 API。**
 <br>
@@ -98,7 +98,7 @@
   </tr>
 </table>
 
-## 作者的另一个开源项目：MangoDisk ⭐
+## 上游作者的另一个开源项目：MangoDisk ⭐
 
 <p align="center">
   <a href="https://github.com/harry0703/MangoDisk">
@@ -140,7 +140,7 @@
 
 ## 作品展示 🎬
 
-以下示例均由 MoneyPrinterTurbo 实际生成。
+以下示例由上游 MoneyPrinterTurbo 实际生成，展示同一条制作链路。
 
 ### 竖屏 9:16
 
@@ -196,8 +196,8 @@
 ### 推荐使用方式
 
 - 不想手动安装和配置：直接使用 AI Agent 生成视频
-- Windows 用户：优先使用一键启动包，适合快速体验
-- macOS / Linux 用户：优先使用 `uv` 进行本地部署
+- Windows / macOS / Linux：优先克隆本仓库，用 `uv` 本地部署
+- 需要上游一键包：见下方 Windows 一键启动包
 - 想要隔离运行环境：优先使用 Docker 部署
 
 ### 使用 AI Agent 生成视频
@@ -205,21 +205,23 @@
 如果你的 AI Agent 支持读取 Skill 文档并操作本地终端，可以直接发送下面这段话。Agent 会自动完成安装、配置和视频生成；只有缺少必要的 API Key 时才会向你询问，完成后会返回生成的视频文件路径。目前支持 macOS 和 Windows。
 
 ```text
-使用这个 Skill：https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/SKILL.md
+使用这个 Skill：https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/SKILL.md
 帮我生成一个主题为“人工智能如何改变普通人的日常生活”的视频。
 ```
 
+Skill 会安装到 `~/B-roll`。你也可以直接在本仓库里让 Agent 调用 `cli.py`。
+
 ### 在 Google Colab 中运行
 
-免去本地环境配置，点击直接在 Google Colab 中快速体验 MoneyPrinterTurbo
+免去本地环境配置，可以先用上游 MoneyPrinterTurbo 的 Colab 笔记本快速体验同一条流水线：
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)
 
 ### Windows 一键启动包
 
-下载一键启动包，解压直接使用（路径不要有 **中文**、**特殊字符**、**空格**）
+B-roll 目前以源码安装为主（见下方「手动部署」）。如果你需要官方一键包，可使用上游 MoneyPrinterTurbo 的发布包（路径不要有 **中文**、**特殊字符**、**空格**）：
 
-- GitHub Releases：https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
+- 上游 Releases：https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
 
 下载后，建议先**双击执行** `update.bat` 更新到**最新代码**，然后双击 `start.bat` 启动
 
@@ -235,7 +237,7 @@
 #### ① 克隆代码
 
 ```shell
-git clone https://github.com/harry0703/MoneyPrinterTurbo.git
+git clone https://github.com/bixingai/vidgen.git
 ```
 
 #### ② 配置项目（可选）
@@ -254,11 +256,11 @@ Windows 用户可以参考微软的文档：
 2. https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers
 
 ```shell
-cd MoneyPrinterTurbo
+cd vidgen
 docker compose -f docker-compose.release.yml up
 ```
 
-> 默认推荐使用 `docker-compose.release.yml`，它会直接拉取 GitHub Container Registry 上的预构建镜像：`ghcr.io/harry0703/moneyprinterturbo:latest`。
+> 默认推荐使用 `docker-compose.release.yml`，它会拉取仍由上游发布的镜像：`ghcr.io/harry0703/moneyprinterturbo:latest`。
 > 如果你需要本地重新构建镜像，可以继续使用 `docker compose up`。
 > 首次启动前，请将 `config.example.toml` 复制为 `config.toml`，供容器挂载使用。
 
@@ -282,8 +284,8 @@ docker compose -f docker-compose.release.yml up
 推荐使用 [uv](https://docs.astral.sh/uv/) 管理 Python 环境和依赖。项目支持 Python 3.11 或更高版本，以下示例使用 Python 3.11。
 
 ```shell
-git clone https://github.com/harry0703/MoneyPrinterTurbo.git
-cd MoneyPrinterTurbo
+git clone https://github.com/bixingai/vidgen.git
+cd vidgen
 uv python install 3.11
 uv sync --frozen
 ```
@@ -304,7 +306,7 @@ pip install -r requirements.txt
 
 #### ② 启动 WebUI 🌐
 
-注意需要到 MoneyPrinterTurbo 项目 `根目录` 下执行以下命令
+注意需要到 B-roll 项目 `根目录`（克隆下来一般叫 `vidgen`）下执行以下命令
 
 ###### Windows
 
@@ -381,10 +383,10 @@ model_size = "large-v3-turbo"
 
 > 首次使用 Whisper 时，程序会自动从 Hugging Face 下载模型。如果当前网络无法自动下载，可以从 [Hugging Face](https://huggingface.co/Systran/faster-whisper-large-v3) 手动下载 `whisper-large-v3`。
 
-下载并解压后，将整个目录放到 `.\MoneyPrinterTurbo\models`，最终路径应为 `.\MoneyPrinterTurbo\models\whisper-large-v3`：
+下载并解压后，将整个目录放到项目根目录的 `models` 下，最终路径应为 `.\models\whisper-large-v3`：
 
 ```
-MoneyPrinterTurbo
+vidgen
   ├─models
   │   └─whisper-large-v3
   │          config.json
@@ -489,18 +491,18 @@ Trying to load the model directly from the local cache, if it exists.
 
 ## 反馈建议 📢
 
-- 可以提交 [issue](https://github.com/harry0703/MoneyPrinterTurbo/issues) 或者 [pull request](https://github.com/harry0703/MoneyPrinterTurbo/pulls)。
+- 可以提交 [issue](https://github.com/bixingai/vidgen/issues) 或者 [pull request](https://github.com/bixingai/vidgen/pulls)。
 
 ## 许可证 📝
 
-点击查看 [`LICENSE`](LICENSE) 文件
+点击查看 [`LICENSE`](LICENSE) 文件。B-roll 基于 [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)（MIT）。
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=harry0703%2FMoneyPrinterTurbo&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=bixingai%2Fvidgen&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&theme=dark&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
  </picture>
 </a>
