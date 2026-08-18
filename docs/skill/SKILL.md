@@ -5,7 +5,7 @@ compatibility: Requires an AI agent with terminal, network, filesystem, and long
 metadata:
   author: "BixingAI"
   version: "1.0.0"
-  repository: "https://github.com/bixingai/vidgen"
+  repository: "https://github.com/bixingai/b-roll"
 ---
 
 # B-roll Video Generation
@@ -37,7 +37,7 @@ This is required on Windows because some agent terminal validators remove backsl
 If the client loaded only the remote `SKILL.md`, download the helper from this repository to a temporary directory, then use that temporary directory as the command working directory:
 
 ```text
-https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/mpt_agent.py
+https://raw.githubusercontent.com/bixingai/b-roll/main/docs/skill/mpt_agent.py
 ```
 
 ### 2. Run the helper
