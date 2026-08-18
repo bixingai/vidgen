@@ -2,12 +2,11 @@
 FROM python:3.11-slim-bullseye
 
 # Set the working directory in the container
-WORKDIR /MoneyPrinterTurbo
+WORKDIR /app
 
-# 设置/MoneyPrinterTurbo目录权限为777
-RUN chmod 777 /MoneyPrinterTurbo
+RUN chmod 777 /app
 
-ENV PYTHONPATH="/MoneyPrinterTurbo"
+ENV PYTHONPATH="/app"
 
 # 本地用户默认继续优先使用国内镜像；GitHub Actions 发布 GHCR 镜像时使用 default，
 # 避免海外 runner 访问国内镜像过慢导致镜像发布长时间卡住。
@@ -76,8 +75,7 @@ CMD ["streamlit", "run", "./webui/Main.py", "--server.address=0.0.0.0", "--serve
 # docker build -t b-roll .
 
 # 2. Run the Docker container using the following command.
-# Container workdir stays /MoneyPrinterTurbo so mounts match the upstream image.
 ## For Linux or MacOS:
-# docker run -v $(pwd)/config.toml:/MoneyPrinterTurbo/config.toml -v $(pwd)/storage:/MoneyPrinterTurbo/storage -p 127.0.0.1:8501:8501 b-roll
+# docker run -v $(pwd)/config.toml:/app/config.toml -v $(pwd)/storage:/app/storage -p 127.0.0.1:8501:8501 b-roll
 ## For Windows:
-# docker run -v ${PWD}/config.toml:/MoneyPrinterTurbo/config.toml -v ${PWD}/storage:/MoneyPrinterTurbo/storage -p 127.0.0.1:8501:8501 b-roll
+# docker run -v ${PWD}/config.toml:/app/config.toml -v ${PWD}/storage:/app/storage -p 127.0.0.1:8501:8501 b-roll
