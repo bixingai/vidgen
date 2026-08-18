@@ -65,7 +65,7 @@ st.set_page_config(
             f"{brand.PRODUCT_TAGLINE}. Give it a topic and it writes the "
             "voiceover, pulls B-roll, and cuts a short.\n\n"
             f"{brand.GITHUB_URL}\n\n"
-            "Based on MoneyPrinterTurbo (MIT)."
+            "Includes work © 2024 Harry (MIT)."
         ),
     },
 )

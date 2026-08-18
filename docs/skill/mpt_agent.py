@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-platform installation and video generation for the B-roll Skill.
-
-Based on MoneyPrinterTurbo (MIT).
-"""
+"""Cross-platform installation and video generation for the B-roll Skill."""
 
 from __future__ import annotations
 
