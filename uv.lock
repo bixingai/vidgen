@@ -1497,7 +1497,7 @@ wheels = [
 ]
 
 [[package]]
-name = "moneyprinterturbo"
+name = "b-roll"
 version = "1.0.0"
 source = { virtual = "." }
 dependencies = [
