@@ -420,7 +420,7 @@ def get_default_ollama_base_url() -> str:
 
 
 def load_config():
-    # fix: IsADirectoryError: [Errno 21] Is a directory: '/MoneyPrinterTurbo/config.toml'
+    # fix: IsADirectoryError: [Errno 21] Is a directory: '/app/config.toml'
     if os.path.isdir(config_file):
         shutil.rmtree(config_file)
 
