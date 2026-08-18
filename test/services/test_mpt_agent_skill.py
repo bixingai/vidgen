@@ -62,6 +62,14 @@ class TestMptAgentSkill(unittest.TestCase):
         )
         self.assertIn("workdir=SKILL_DIR", text)
         self.assertNotIn('python "<SKILL_DIR>/mpt_agent.py"', text)
+        self.assertIn("name: b-roll-video", text)
+        self.assertIn("~/B-roll/.agent-logs/b-roll-video/latest-result.json", text)
+        self.assertIn(
+            "https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/mpt_agent.py",
+            text,
+        )
+        self.assertEqual(mpt_agent.DEFAULT_ROOT, Path.home() / "B-roll")
+        self.assertIn("bixingai/vidgen", mpt_agent.PROJECT_ARCHIVE_URL)
 
     def test_first_run_only_requests_missing_api_keys(self):
         with tempfile.TemporaryDirectory() as temp_dir:

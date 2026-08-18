@@ -10,7 +10,7 @@ from contextlib import contextmanager
 import toml
 from loguru import logger
 
-from app import __version__
+from app import __version__, brand
 
 root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 config_file = f"{root_dir}/config.toml"
@@ -535,10 +535,10 @@ hostname = socket.gethostname()
 log_level = _cfg.get("log_level", "DEBUG")
 listen_host = _cfg.get("listen_host", "0.0.0.0")
 listen_port = _cfg.get("listen_port", 8080)
-project_name = _cfg.get("project_name", "MoneyPrinterTurbo")
+project_name = _cfg.get("project_name", brand.PRODUCT_NAME)
 project_description = _cfg.get(
     "project_description",
-    "<a href='https://github.com/harry0703/MoneyPrinterTurbo'>https://github.com/harry0703/MoneyPrinterTurbo</a>",
+    f"<a href='{brand.GITHUB_URL}'>{brand.GITHUB_URL}</a>",
 )
 project_version = _cfg.get("project_version", __version__)
 reload_debug = False

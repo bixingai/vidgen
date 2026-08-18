@@ -1,3 +1,4 @@
+import base64
 import hashlib
 import html
 import json
@@ -20,12 +21,13 @@ from loguru import logger
 from streamlit_tour import Tour
 
 # WebUI 作为独立入口运行时，需要让项目根目录优先于第三方依赖，
-# 避免依赖中的同名 app 包遮蔽 MoneyPrinterTurbo 自己的 app 包。
+# 避免依赖中的同名 app 包遮蔽本项目的 app 包。
 root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 if root_dir in sys.path:
     sys.path.remove(root_dir)
 sys.path.insert(0, root_dir)
 
+from app import brand
 from app.config import config
 from app.models import const
 from app.models.llm_provider import (
@@ -52,22 +54,30 @@ from app.utils.logging_utils import configure_terminal_logger
 from app.utils import utils
 
 st.set_page_config(
-    page_title="MoneyPrinterTurbo",
-    page_icon="🤖",
+    page_title=brand.PRODUCT_NAME,
+    page_icon=str(brand.LOGO_PATH),
     layout="wide",
     initial_sidebar_state="auto",
     menu_items={
-        "Report a bug": "https://github.com/harry0703/MoneyPrinterTurbo/issues",
-        "About": "# MoneyPrinterTurbo\nSimply provide a topic or keyword for a video, and it will "
-        "automatically generate the video copy, video materials, video subtitles, "
-        "and video background music before synthesizing a high-definition short "
-        "video.\n\nhttps://github.com/harry0703/MoneyPrinterTurbo",
+        "Report a bug": brand.GITHUB_ISSUES_URL,
+        "About": (
+            f"# {brand.PRODUCT_NAME}\n"
+            f"{brand.PRODUCT_TAGLINE}. Give it a topic and it writes the "
+            "voiceover, pulls B-roll, and cuts a short.\n\n"
+            f"{brand.GITHUB_URL}\n\n"
+            "Based on MoneyPrinterTurbo (MIT)."
+        ),
     },
+)
+
+_BRAND_LOGO_DATA_URI = (
+    "data:image/png;base64,"
+    + base64.b64encode(brand.LOGO_PATH.read_bytes()).decode("ascii")
 )
 
 
 # Streamlit 1.59 会在页面右上角默认展示 Deploy、skills nudge 等平台入口。
-# MoneyPrinterTurbo 是面向终端用户的本地工具，这些入口会造成顶部大块空白，
+# B-roll 是面向终端用户的本地工具，这些入口会造成顶部大块空白，
 # 也会让新用户误以为需要安装额外组件。这里统一隐藏 Streamlit 平台工具栏，
 # 并压缩主容器顶部留白，只保留项目自己的标题、语言选择和业务设置区域。
 style_file = Path(__file__).with_name("styles.css")
@@ -329,9 +339,17 @@ def _initialize_session_state():
         # 最近一次从当前页面提交的任务。生成改为后台执行后，页面 Fragment
         # 通过这个 ID 查询状态；刷新时不再依赖正在执行的旧页面脚本。
         "current_generation_task_id": "",
+        "help_page_open": False,
     }
     for key, value in defaults.items():
         st.session_state.setdefault(key, value)
+
+    if not st.session_state.get("help_query_handled"):
+        # 只在会话首次加载时读取 ?help=1，避免用户关掉教程后又被参数重新打开。
+        help_query = str(st.query_params.get("help", "") or "").strip().lower()
+        if help_query in {"1", "true", "yes"}:
+            st.session_state["help_page_open"] = True
+        st.session_state["help_query_handled"] = True
 
 
 _initialize_session_state()
@@ -1152,12 +1170,13 @@ def _render_brand(available_update: str | None = None):
     st.markdown(
         f"""
         <h1 class="mpt-brand">
-            <span class="mpt-brand__name">MoneyPrinterTurbo</span>
+            <img class="mpt-brand__mark" src="{_BRAND_LOGO_DATA_URI}" alt="" width="40" height="40">
+            <span class="mpt-brand__name">{html.escape(brand.PRODUCT_NAME)}</span>
             <a class="mpt-brand__version"
-               href="https://github.com/harry0703/MoneyPrinterTurbo"
+               href="{html.escape(brand.GITHUB_URL)}"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Open MoneyPrinterTurbo on GitHub"
+               aria-label="Open {html.escape(brand.PRODUCT_NAME)} on GitHub"
                title="Open project on GitHub">v{html.escape(str(config.project_version))}</a>
             {update_link}
         </h1>
@@ -1205,6 +1224,21 @@ def _render_top_bar():
             width="stretch",
         ):
             _render_task_manager_entry()
+
+            help_open = bool(st.session_state.get("help_page_open"))
+            if st.button(
+                tr("Back to Studio") if help_open else tr("Help"),
+                key="toggle_help_page_button",
+                type="secondary",
+                icon=":material/arrow_back:" if help_open else ":material/help:",
+                width="content",
+            ):
+                st.session_state["help_page_open"] = not help_open
+                if st.session_state["help_page_open"]:
+                    st.query_params["help"] = "1"
+                elif "help" in st.query_params:
+                    del st.query_params["help"]
+                st.rerun()
 
             if st.button(
                 tr("Settings"),
@@ -4283,12 +4317,59 @@ def _render_generation_controls(
     return start_button
 
 
+HELP_IMAGE_DIR = Path(__file__).with_name("help") / "images"
+
+
+def _help_figure(filename: str, caption_key: str):
+    """渲染教程截图；图片缺失时只保留说明，避免空白破版。"""
+    image_path = HELP_IMAGE_DIR / filename
+    if image_path.is_file():
+        st.image(str(image_path), caption=tr(caption_key), width="stretch")
+        return
+    st.caption(tr(caption_key))
+
+
+def _render_help_page():
+    """渲染带截图的入门教程，替代主工作台。"""
+    with st.container(key="help_page"):
+        st.markdown(f"## {tr('Help Page Title')}")
+        st.markdown(tr("Help Brand Line"))
+        st.markdown(tr("Help Page Intro"))
+
+        st.markdown(f"### {tr('Help Step 1 Title')}")
+        st.markdown(tr("Help Step 1 Body"))
+        _help_figure("overview.png", "Help Caption Overview")
+
+        st.markdown(f"### {tr('Help Step 2 Title')}")
+        st.markdown(tr("Help Step 2 Body"))
+        _help_figure("settings-llm.png", "Help Caption Settings")
+
+        st.markdown(f"### {tr('Help Step 3 Title')}")
+        st.markdown(tr("Help Step 3 Body"))
+        _help_figure("settings-materials.png", "Help Caption Materials")
+
+        st.markdown(f"### {tr('Help Step 4 Title')}")
+        st.markdown(tr("Help Step 4 Body"))
+
+        st.markdown(f"### {tr('Help Step 5 Title')}")
+        st.markdown(tr("Help Step 5 Body"))
+
+        st.markdown(f"### {tr('Help Tips Title')}")
+        st.markdown(f"- {tr('Help Tip 1')}")
+        st.markdown(f"- {tr('Help Tip 2')}")
+        st.markdown(f"- {tr('Help Tip 3')}")
+
+
 def _render_application():
     """按固定顺序渲染顶部栏、弹窗、生成表单和任务结果。"""
     _render_top_bar()
 
     if st.session_state.get("settings_dialog_open", False):
         _render_settings_dialog()
+
+    if st.session_state.get("help_page_open"):
+        _render_help_page()
+        return
 
     restore_applied = _apply_pending_task_restore()
     restore_candidate_id = st.session_state.get("task_restore_candidate_id")

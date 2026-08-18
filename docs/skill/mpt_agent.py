@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Cross-platform installation and video generation for the MoneyPrinterTurbo Skill."""
+"""Cross-platform installation and video generation for the B-roll Skill.
+
+Based on MoneyPrinterTurbo (MIT).
+"""
 
 from __future__ import annotations
 
@@ -19,10 +22,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+PRODUCT_NAME = "B-roll"
 PROJECT_ARCHIVE_URL = (
-    "https://github.com/harry0703/MoneyPrinterTurbo/archive/refs/heads/main.zip"
+    "https://github.com/bixingai/vidgen/archive/refs/heads/main.zip"
 )
-DEFAULT_ROOT = Path.home() / "MoneyPrinterTurbo"
+DEFAULT_ROOT = Path.home() / "B-roll"
+AGENT_LOG_DIR_NAME = "b-roll-video"
+USER_AGENT = "B-roll-Agent-Skill"
 DEFAULT_VOICE_NAME = "zh-CN-XiaoxiaoNeural-Female"
 NEEDS_INPUT_EXIT_CODE = 10
 SUPPORTED_SOURCES = {"pexels", "pixabay", "coverr", "local"}
@@ -68,24 +74,24 @@ class SkillError(RuntimeError):
 
 def log(message: str) -> None:
     """Flush concise progress so the agent knows the long-running job started."""
-    print(f"[MoneyPrinterTurbo] {message}", flush=True)
+    print(f"[{PRODUCT_NAME}] {message}", flush=True)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Install MoneyPrinterTurbo and generate a final video from a topic."
+        description="Install B-roll and generate a final video from a topic."
     )
     parser.add_argument("--subject", required=True, help="video topic")
     parser.add_argument(
         "--root",
         type=Path,
         default=DEFAULT_ROOT,
-        help=f"MoneyPrinterTurbo installation directory (default: {DEFAULT_ROOT})",
+        help=f"B-roll installation directory (default: {DEFAULT_ROOT})",
     )
     parser.add_argument(
         "cli_args",
         nargs=argparse.REMAINDER,
-        help="additional MoneyPrinterTurbo CLI arguments placed after --",
+        help="additional B-roll CLI arguments placed after --",
     )
     args = parser.parse_args(argv)
     args.subject = args.subject.strip()
@@ -119,10 +125,10 @@ def ensure_project(root: Path) -> None:
     log(f"first-time installation: downloading the official project to {root}")
     with tempfile.TemporaryDirectory(prefix="mpt-install-") as temp_dir_value:
         temp_dir = Path(temp_dir_value)
-        archive_path = temp_dir / "MoneyPrinterTurbo.zip"
+        archive_path = temp_dir / "vidgen.zip"
         request = urllib.request.Request(
             PROJECT_ARCHIVE_URL,
-            headers={"User-Agent": "MoneyPrinterTurbo-Agent-Skill"},
+            headers={"User-Agent": USER_AGENT},
         )
         with urllib.request.urlopen(request, timeout=120) as response:
             # Stream the archive to avoid holding a second full copy in memory.
@@ -137,7 +143,7 @@ def ensure_project(root: Path) -> None:
             if path.is_dir() and (path / "cli.py").is_file()
         ]
         if len(candidates) != 1:
-            raise SkillError("download completed but no valid MoneyPrinterTurbo project was found")
+            raise SkillError("download completed but no valid B-roll project was found")
         if root.exists():
             root.rmdir()
         shutil.move(str(candidates[0]), str(root))
@@ -365,7 +371,7 @@ def _validate_pexels_key(api_key: str) -> str:
         PEXELS_VALIDATION_URL,
         headers={
             "Authorization": api_key,
-            "User-Agent": "MoneyPrinterTurbo-Agent-Skill",
+            "User-Agent": USER_AGENT,
         },
     )
     try:
@@ -427,7 +433,7 @@ def validate_pexels_config(config_path: Path, cli_args: list[str]) -> bool:
 
 
 def result_manifest_path(root: Path) -> Path:
-    return root / ".agent-logs" / "moneyprinterturbo-video" / "latest-result.json"
+    return root / ".agent-logs" / AGENT_LOG_DIR_NAME / "latest-result.json"
 
 
 def write_result_manifest(root: Path, payload: dict[str, object]) -> Path:
@@ -486,7 +492,7 @@ def generate_video(
 
     task_id = str(uuid.uuid4())
     task_dir = root / "storage" / "tasks" / task_id
-    log_dir = root / ".agent-logs" / "moneyprinterturbo-video"
+    log_dir = root / ".agent-logs" / AGENT_LOG_DIR_NAME
     log_dir.mkdir(parents=True, exist_ok=True)
     log_path = log_dir / f"run-{task_id}.log"
     write_result_manifest(
