@@ -46,8 +46,7 @@ div[class*="st-key-voice_mode_control"] [role="radiogroup"] > button p {
     white-space: nowrap !important;
 }
 
-/* 顶部品牌区将项目名和弱化版本号放在同一基线。项目名称仍是页面唯一的 h1；
-   版本号本身作为项目链接，避免增加独立图标而干扰标题的视觉层级。 */
+/* 顶部品牌区将图标、项目名和弱化版本号放在同一行。项目名称仍是页面唯一的 h1。 */
 .mpt-brand {
     min-width: 0;
     margin: 0;
@@ -57,12 +56,21 @@ div[class*="st-key-voice_mode_control"] [role="radiogroup"] > button p {
 }
 
 /* Streamlit 会在自定义 h1 内增加一层文本容器，实际的行内布局需要作用在
-   这层容器上，才能稳定控制项目名和版本号的间距。 */
+   这层容器上，才能稳定控制图标、项目名和版本号的间距。 */
 .mpt-brand > span:first-child {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.65rem;
     min-width: 0;
+}
+
+.mpt-brand__mark {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.55rem;
+    object-fit: contain;
+    display: block;
 }
 
 .mpt-brand__name {
@@ -136,9 +144,26 @@ div[class*="st-key-voice_mode_control"] [role="radiogroup"] > button p {
     width: fit-content !important;
 }
 
+/* 教程页限制阅读宽度，截图圆角边框，避免通栏大图显得空。 */
+.st-key-help_page {
+    max-width: 880px;
+    margin: 0.5rem auto 3rem;
+}
+
+.st-key-help_page img {
+    border-radius: 12px;
+    border: 1px solid rgba(127, 127, 127, 0.28);
+}
+
 @media (max-width: 700px) {
     .mpt-brand > span:first-child {
         gap: 0.45rem;
+    }
+
+    .mpt-brand__mark {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 0.4rem;
     }
 
     .mpt-brand__name {
@@ -158,6 +183,12 @@ div[class*="st-key-voice_mode_control"] [role="radiogroup"] > button p {
 @media (max-width: 480px) {
     .mpt-brand > span:first-child {
         gap: 0.35rem;
+    }
+
+    .mpt-brand__mark {
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 0.32rem;
     }
 
     .mpt-brand__name {
@@ -328,6 +359,11 @@ div[class*="st-key-task_row_"] button[kind="secondary"] p {
 
 /* 中等宽度下将四个设置面板调整为 2×2，避免每列过窄导致标签和按钮频繁换行。 */
 @media (min-width: 701px) and (max-width: 1100px) {
+    .mpt-brand__mark {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
     .mpt-brand__name {
         font-size: 2.25rem;
     }

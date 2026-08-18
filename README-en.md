@@ -1,20 +1,20 @@
 <div align="center">
 
-# MoneyPrinterTurbo 💸
+<img src="resource/public/logo.png" alt="B-roll" width="96">
 
-### An All-in-One AI Short Video Generator
+# B-roll
 
-Provide a video <b>topic</b> or <b>keyword</b>, and MoneyPrinterTurbo will generate the script, match footage, create subtitles and background music, and produce an HD short video.
+### A BX short-video tool from BixingAI
 
-[![Version](https://img.shields.io/github/v/release/harry0703/MoneyPrinterTurbo?color=blue&label=version)](https://github.com/harry0703/MoneyPrinterTurbo/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)
+Give it a <b>topic</b> or <b>keyword</b>. It writes the voiceover, pulls B-roll, adds captions and music, and cuts an HD short.
+
+Based on [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) (MIT).
+
+[![Version](https://img.shields.io/github/v/release/bixingai/vidgen?color=blue&label=version)](https://github.com/bixingai/vidgen/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/bixingai/vidgen)
 [![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Downloads](https://img.shields.io/github/downloads/harry0703/MoneyPrinterTurbo/total)](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)
 
-<a href="https://trendshift.io/repositories/8731" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8731" alt="harry0703%2FMoneyPrinterTurbo | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-<a href="https://www.star-history.com/harry0703/moneyprinterturbo"><img src="https://api.star-history.com/badge?repo=harry0703/MoneyPrinterTurbo" alt="Star History Rank" style="height: 55px;" height="55"/></a>
-
-English | [简体中文](README.md) | [Releases](https://github.com/harry0703/MoneyPrinterTurbo/releases) | [Issues](https://github.com/harry0703/MoneyPrinterTurbo/issues)
+English | [简体中文](README.md) | [Releases](https://github.com/bixingai/vidgen/releases) | [Issues](https://github.com/bixingai/vidgen/issues)
 
 </div>
 
@@ -36,7 +36,7 @@ English | [简体中文](README.md) | [Releases](https://github.com/harry0703/Mo
   <a href="https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo" target="_blank"><img src="https://gcdn.moonshot.cn/growth-cdn/sponsor/kimi-en.png" alt="Kimi sponsors MoneyPrinterTurbo" width="100%"></a>
 </div>
 
-Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo) for sponsoring this project! [Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) is Moonshot AI's most capable model and the world's first open 3T-class model. With native vision and a 1-million-token context window, K3 delivers frontier performance across knowledge work, reasoning, and long-horizon tasks. Within MoneyPrinterTurbo, K3 powers video creation by writing scripts and extracting the search keywords that determine the final footage—the better it understands the content, the more relevant the results.
+Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo) for sponsoring this project! [Kimi K3](https://www.kimi.com/blog/kimi-k3?aff=moneyprinterturbo) is Moonshot AI's most capable model and the world's first open 3T-class model. With native vision and a 1-million-token context window, K3 delivers frontier performance across knowledge work, reasoning, and long-horizon tasks. Within B-roll, K3 powers video creation by writing scripts and extracting the search keywords that determine the final footage—the better it understands the content, the more relevant the results.
 
 **Exclusive offer for MoneyPrinterTurbo users: new users who register through the dedicated link receive bonus API credit equal to 10% of their first successful top-up, up to CNY 1,000. The offer ends September 30, 2026. Visit the Kimi Open Platform ([中文站](https://platform.kimi.com?track_id=track-2f5441d6ffd84c509dd079d78e9db5dc&aff=moneyprinterturbo) | [Global](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247242a1058c&aff=moneyprinterturbo)) to try the API.**
 
@@ -98,7 +98,7 @@ Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247
   </tr>
 </table>
 
-## Another Open-Source Project from the Creator: MangoDisk ⭐
+## Another Open-Source Project from the Upstream Author: MangoDisk ⭐
 
 <p align="center">
   <a href="https://github.com/harry0703/MangoDisk">
@@ -141,7 +141,7 @@ Thanks to [Kimi](https://platform.kimi.ai?track_id=track-f6b0a640d35c41deb03b247
 
 ## Gallery 🎬
 
-All examples below were generated with MoneyPrinterTurbo.
+The examples below were generated with upstream MoneyPrinterTurbo and show the same production pipeline.
 
 ### Portrait 9:16
 
@@ -197,30 +197,32 @@ All examples below were generated with MoneyPrinterTurbo.
 ### Recommended Paths
 
 - If you do not want to install or configure the project manually: generate videos with an AI Agent
-- Windows users: use the one-click package first for the fastest local trial
-- macOS / Linux users: use `uv` for the primary local setup path
+- Windows / macOS / Linux: clone this repo and use `uv` for local setup
+- If you need the upstream portable zip: see the Windows one-click package below
 - If you want a more isolated runtime: use Docker deployment
 
 ### Generate Videos with an AI Agent
 
-If your AI Agent can read Skill documents and operate a local terminal, send it the prompt below. The Agent will install and configure MoneyPrinterTurbo, generate the video, and return the video file path. It will ask only for required API keys that are not already configured. This workflow currently supports macOS and Windows.
+If your AI Agent can read Skill documents and operate a local terminal, send it the prompt below. The Agent will install and configure the project, generate the video, and return the video file path. It will ask only for required API keys that are not already configured. This workflow currently supports macOS and Windows.
 
 ```text
-Use this Skill: https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/SKILL.md
+Use this Skill: https://raw.githubusercontent.com/bixingai/vidgen/main/docs/skill/SKILL.md
 Create a video with the topic "How AI is changing everyday life."
 ```
 
+The Skill installs into `~/B-roll`. You can also ask an agent to run `cli.py` in this repository.
+
 ### Run in Google Colab
 
-Want to try MoneyPrinterTurbo without setting up a local environment? Run it directly in Google Colab!
+To skip local setup, try the upstream MoneyPrinterTurbo Colab notebook. It runs the same pipeline:
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)
 
 ### Windows
 
-Download the latest Windows one-click package from GitHub Releases, then extract it directly.
+B-roll is currently installed from source (see Manual Deployment below). For a portable zip, use the upstream MoneyPrinterTurbo release:
 
-- GitHub Release: https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
+- Upstream Release: https://github.com/harry0703/MoneyPrinterTurbo/releases/latest
 
 After downloading, it is recommended to **double-click** `update.bat` first to update to the **latest code**, then double-click `start.bat` to launch
 
@@ -240,7 +242,7 @@ Use the local setup or Docker instructions below.
 #### ① Clone the Project
 
 ```shell
-git clone https://github.com/harry0703/MoneyPrinterTurbo.git
+git clone https://github.com/bixingai/vidgen.git
 ```
 
 #### ② Configure the Project (Optional)
@@ -258,11 +260,11 @@ If you are using a Windows system, please refer to Microsoft's documentation:
 2. https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
 
 ```shell
-cd MoneyPrinterTurbo
+cd vidgen
 docker compose -f docker-compose.release.yml up
 ```
 
-> The recommended default is `docker-compose.release.yml`, which pulls the prebuilt image from GitHub Container Registry: `ghcr.io/harry0703/moneyprinterturbo:latest`.
+> The recommended default is `docker-compose.release.yml`, which pulls the image still published by upstream: `ghcr.io/harry0703/moneyprinterturbo:latest`.
 > If you need to build the image locally, you can still run `docker compose up`.
 > Before the first start, copy `config.example.toml` to `config.toml` so it can be mounted into the containers.
 
@@ -281,8 +283,8 @@ Open your browser and visit http://127.0.0.1:8080/docs or http://127.0.0.1:8080/
 Use [uv](https://docs.astral.sh/uv/) to manage the Python environment and dependencies. The project supports Python 3.11 or later; the example below uses Python 3.11.
 
 ```shell
-git clone https://github.com/harry0703/MoneyPrinterTurbo.git
-cd MoneyPrinterTurbo
+git clone https://github.com/bixingai/vidgen.git
+cd vidgen
 uv python install 3.11
 uv sync --frozen
 ```
@@ -303,7 +305,7 @@ Notes:
 
 #### ② Launch the WebUI 🌐
 
-Note that you need to execute the following commands in the `root directory` of the MoneyPrinterTurbo project
+Note that you need to execute the following commands in the `root directory` of the B-roll project (usually `vidgen` after cloning)
 
 ###### Windows
 
@@ -359,7 +361,7 @@ uv run python cli.py --help
 
 ## Voice Synthesis 🗣
 
-The default provider is the free **Edge TTS**, shown as **Azure TTS V1** in the WebUI. MoneyPrinterTurbo also supports **Azure TTS V2**, **SiliconFlow TTS**, **Google Gemini TTS**, **Xiaomi MiMo TTS**, **ElevenLabs TTS**, self-hosted **Chatterbox TTS**, and a no-voice mode.
+The default provider is the free **Edge TTS**, shown as **Azure TTS V1** in the WebUI. B-roll also supports **Azure TTS V2**, **SiliconFlow TTS**, **Google Gemini TTS**, **Xiaomi MiMo TTS**, **ElevenLabs TTS**, self-hosted **Chatterbox TTS**, and a no-voice mode.
 
 Select a provider and voice in the WebUI, then follow the on-screen instructions for any required credentials. Edge TTS does not require an API key; [Azure TTS V2](https://portal.azure.com/) and other cloud providers require credentials from their respective platforms. See the available Edge TTS voices in the [voice list](./docs/voice-list.txt).
 
@@ -382,10 +384,10 @@ model_size = "large-v3-turbo"
 
 > On first use, Whisper automatically downloads the model from Hugging Face. If the automatic download fails, download `whisper-large-v3` manually from [Hugging Face](https://huggingface.co/Systran/faster-whisper-large-v3).
 
-After extracting the model, place the entire directory in `.\MoneyPrinterTurbo\models`. The final path should be `.\MoneyPrinterTurbo\models\whisper-large-v3`:
+After extracting the model, place the entire directory in `.\models`. The final path should be `.\models\whisper-large-v3`:
 
 ```
-MoneyPrinterTurbo
+vidgen
   ├─models
   │   └─whisper-large-v3
   │          config.json
@@ -493,18 +495,18 @@ Solution: [See how to download the model manually from Hugging Face](#subtitle-g
 
 ## Feedback & Suggestions 📢
 
-- You can submit an [issue](https://github.com/harry0703/MoneyPrinterTurbo/issues) or a [pull request](https://github.com/harry0703/MoneyPrinterTurbo/pulls).
+- You can submit an [issue](https://github.com/bixingai/vidgen/issues) or a [pull request](https://github.com/bixingai/vidgen/pulls).
 
 ## License 📝
 
-Click to view the [`LICENSE`](LICENSE) file
+Click to view the [`LICENSE`](LICENSE) file. B-roll is based on [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) (MIT).
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=harry0703%2FMoneyPrinterTurbo&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=bixingai%2Fvidgen&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&theme=dark&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=harry0703/MoneyPrinterTurbo&type=date&legend=top-left&sealed_token=AtOR8By6GcNKd46eJLixrnucHF_99GOSBBKfc60pAm2xsDylemaYxDMcvTlPRz-G_onzDrs-hDrM0xdKkn0L6PgDin3fv02ViVtsZvgRYgk0YOzkX2KgLG8wro66VGphii-u6GNpzD8JocrqGGKvsFSpmbRqo5g-2mEDaN7-ESdtF48ZH0rDOCpoc1Mh" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=bixingai/vidgen&type=date&legend=top-left" />
  </picture>
 </a>
